@@ -1,6 +1,6 @@
 # Ejercicios de programación en Python de [Codember](https://codember.dev)
 ## Sobre este repositorio 
-Aquí compartiré una variedad de desafíos de programación que he abordaré utilizando el lenguaje de programación **Python**. 
+Aquí compartiré una variedad de desafíos de programación que abordaré utilizando el lenguaje de programación **Python**. 
 
 ## ¿Qué encontrarás en este repositorio?
 En este repositorio, he organizado los ejercicios de programación en directorios correspondientes a cada desafío de Codember. Dentro de cada directorio, encontrarás un archivo `README.md` que contiene el enunciado del ejercicio.
