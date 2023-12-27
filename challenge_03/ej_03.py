@@ -15,7 +15,7 @@ def open_file(file: Union[str, Path]) -> list[str]:
             lol_file.append(no_space.split(":"))
         return lol_file
 
-def verify_invalid_key(lista: list[list[str]]) -> bool:
+def verify_invalid_key(lista: list[str]) -> bool:
     '''
     Recibe una lista con las políticas de las clave y la clave, y devulve un bool de si es incorrecta o no
     '''
@@ -24,6 +24,7 @@ def verify_invalid_key(lista: list[list[str]]) -> bool:
     character = lista[0][-1]
     num_rep_char = count_char(lista[1], character)
 
+    return False if min <= num_rep_char <= max else True # devuelve true si la clave es inválida
 
 def get_min(politica_clave: str) -> int:
     '''
@@ -51,8 +52,17 @@ def count_char(clave: str, char:str) -> int:
     
     return count
 
+def find_invalid_key(lol: list[list[str]], pos: int) -> Union[str, Exception]:
+    try:
+        return lol[pos - 1][1]
+    except IndexError as error:
+        return error
 
 if __name__ == "__main__":
     file_path = Path("./challenge_03/encryption_policies.txt")
     list_text = open_file(file_path)
-    print(list_text)
+    invalid_list = list(filter(verify_invalid_key, list_text))
+    invalid_key_pos = find_invalid_key(invalid_list, 42)
+    print(invalid_key_pos)
+    
+    
