@@ -62,7 +62,7 @@ if __name__ == "__main__":
     file_path = Path("./challenge_03/encryption_policies.txt")
     list_text = open_file(file_path)
     invalid_list = list(filter(verify_invalid_key, list_text))
-    invalid_key_pos = find_invalid_key(invalid_list, 42)
+    invalid_key_pos = find_invalid_key(invalid_list, 13)
     print(invalid_key_pos)
     
     
